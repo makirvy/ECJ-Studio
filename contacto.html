@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | ECJ Studio</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Importante: FontAwesome para que se vean los íconos de redes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    @media (max-width: 768px) {
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+    }
+    .contact-info-box, .contact-form-box {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 10px;
+    }
+    .contact-info-box h3, .contact-form-box h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--accent);
+    }
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+      color: var(--text-secondary);
+    }
+    .info-item i {
+      color: var(--accent);
+      font-size: 1.2rem;
+      width: 25px;
+    }
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 0.8rem;
+      background-color: var(--bg-primary);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--text-primary);
+      font-family: inherit;
+    }
+    .form-group input:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header con Logo Doble -->
+ <header>
+    <div class="nav-container">
+      <div class="logo-wrapper">
+        <a href="index.html" class="logo-brand">
+          <img src="img/logo.png" alt="ECJ Studio Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/150x60/141414/d4af37?text=LOGO'">
+        </a>
+        <a href="index.html" class="logo-text-original">
+          ECJ <span>STUDIO</span>
+        </a>
+      </div>
+      
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="galeria.html">Galería</a></li>
+        <li><a href="tienda.html">Tienda</a></li>
+        <li><a href="contacto.html" class="active">Contacto</a></li>
+      </ul>
+
+   <!-- BOTONES DE SESIÓN ACTUALIZADOS -->
+      <div class="nav-user-actions">
+        <a href="javascript:void(0)" onclick="openAuth('login')"><i class="fa-solid fa-user"></i> Iniciar Sesión</a>
+        <span style="color: var(--border);">|</span>
+        <a href="javascript:void(0)" onclick="openAuth('register')">Crear Cuenta</a>
+      </div>
+  </header>
+
+  <!-- Contenido Principal de Contacto -->
+  <main class="container">
+    <div class="page-title">
+      <h1>Ponte en Contacto</h1>
+      <p>Estamos listos para hacer realidad tu próxima sesión o proyecto</p>
+    </div>
+
+    <div class="contact-container">
+      <!-- Información -->
+      <div class="contact-info-box">
+        <h3>Información del Estudio</h3>
+        <p style="color: var(--text-secondary); margin-bottom: 2rem;">Escríbenos o visítanos para coordinar detalles sobre tu cobertura fotográfica o paquetes personalizados.</p>
+        
+        <div class="info-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Penonomé, Coclé, Panamá</span>
+        </div>
+        <div class="info-item">
+          <i class="fa-solid fa-envelope"></i>
+          <span>contacto@ecjstudio.com</span>
+        </div>
+        <div class="info-item">
+          <i class="fa-solid fa-phone"></i>
+          <span>+507 0000-0000</span>
+        </div>
+
+        <div style="margin-top: 2.5rem;">
+          <h4 style="margin-bottom: 1rem; color: var(--text-primary);">Síguenos en Redes</h4>
+          <div class="footer-socials" style="display: flex; gap: 1rem;">
+            <a href="https://instagram.com/ecjstudio" target="_blank" rel="noopener noreferrer" style="width: 40px; height: 40px; border-radius: 50%; background: var(--bg-primary); border: 1px solid var(--border); display: flex; align-items: center; justifyContent: center; color: var(--text-primary); text-decoration: none;"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://tiktok.com/@ecj.studio" target="_blank" rel="noopener noreferrer" style="width: 40px; height: 40px; border-radius: 50%; background: var(--bg-primary); border: 1px solid var(--border); display: flex; align-items: center; justifyContent: center; color: var(--text-primary); text-decoration: none;"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" style="width: 40px; height: 40px; border-radius: 50%; background: var(--bg-primary); border: 1px solid var(--border); display: flex; align-items: center; justifyContent: center; color: var(--text-primary); text-decoration: none;"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulario -->
+      <div class="contact-form-box">
+        <h3>Envíanos un Mensaje</h3>
+        <form onsubmit="event.preventDefault(); alert('¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.');">
+          <div class="form-group">
+            <label for="nombre">Nombre Completo</label>
+            <input type="text" id="nombre" required placeholder="Tu nombre">
+          </div>
+          <div class="form-group">
+            <label for="email">Correo Electrónico</label>
+            <input type="email" id="email" required placeholder="tucorreo@email.com">
+          </div>
+          <div class="form-group">
+            <label for="mensaje">Mensaje o Detalles del Servicio</label>
+            <textarea id="mensaje" rows="5" required placeholder="Cuéntanos qué tipo de sesión necesitas..."></textarea>
+          </div>
+          <button type="submit" class="btn" style="width: 100%;">Enviar Mensaje</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <div class="logo-wrapper footer-logo">
+          <a href="index.html" class="logo-brand">
+            <img src="img/logo.png" alt="ECJ Studio Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/150x60/141414/d4af37?text=LOGO'">
+          </a>
+          <a href="index.html" class="logo-text-original">ECJ <span>STUDIO</span></a>
+        </div>
+        <p style="color: var(--text-secondary); margin-top: 0.8rem;">Estudio de fotografía profesional y producción audiovisual.</p>
+      </div>
+      <div class="footer-socials">
+        <a href="https://instagram.com/ecjstudio" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://tiktok.com/@ecj.studio" target="_blank" rel="noopener noreferrer" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 ECJ Studio. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+<!-- VENTANA MODAL INTERACTIVA DE AUTENTICACIÓN -->
+  <div class="auth-modal" id="authModal">
+    <div class="auth-box">
+      <span class="auth-close" id="closeAuthModal">&times;</span>
+      
+      <!-- Pestanas de Iniciar Sesion / Registro -->
+      <div class="auth-tabs">
+        <button class="auth-tab-btn active" id="tabLoginBtn">Iniciar Sesión</button>
+        <button class="auth-tab-btn" id="tabRegisterBtn">Crear Cuenta</button>
+      </div>
+
+      <!-- Botones de Redes Sociales -->
+      <div class="social-auth-btns">
+        <button class="btn-social" onclick="alert('Conectando con Google...');">
+          <i class="fa-brands fa-google" style="color: #ea4335;"></i> Continuar con Google
+        </button>
+        <button class="btn-social" onclick="alert('Conectando con Instagram...');">
+          <i class="fa-brands fa-instagram" style="color: #e1306c;"></i> Continuar con Instagram
+        </button>
+      </div>
+
+      <div class="auth-divider">
+        <span>O usa tu correo</span>
+      </div>
+
+      <!-- Formulario de Iniciar Sesion -->
+      <form id="loginForm" onsubmit="event.preventDefault(); alert('¡Sesión iniciada con éxito!'); document.getElementById('authModal').classList.remove('active');">
+        <div class="auth-form-group">
+          <label for="loginEmail">Correo Electrónico</label>
+          <input type="email" id="loginEmail" required placeholder="tu@email.com">
+        </div>
+        <div class="auth-form-group">
+          <label for="loginPass">Contraseña</label>
+          <input type="password" id="loginPass" required placeholder="••••••••">
+        </div>
+        <button type="submit" class="btn" style="width: 100%; margin-top: 0.5rem;">Ingresar</button>
+      </form>
+
+      <!-- Formulario de Registro (Oculto por defecto) -->
+      <form id="registerForm" style="display: none;" onsubmit="event.preventDefault(); alert('¡Cuenta creada con éxito! Bienvenid@ a ECJ Studio.'); document.getElementById('authModal').classList.remove('active');">
+        <div class="auth-form-group">
+          <label for="regName">Nombre Completo</label>
+          <input type="text" id="regName" required placeholder="Tu nombre">
+        </div>
+        <div class="auth-form-group">
+          <label for="regEmail">Correo Electrónico</label>
+          <input type="email" id="regEmail" required placeholder="tu@email.com">
+        </div>
+        <div class="auth-form-group">
+          <label for="regPass">Contraseña</label>
+          <input type="password" id="regPass" required placeholder="Crea una contraseña">
+        </div>
+        <button type="submit" class="btn" style="width: 100%; margin-top: 0.5rem;">Registrarme</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- SCRIPT PARA CONTROLAR EL POP-UP Y LAS PESTAÑAS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const authModal = document.getElementById('authModal');
+      const closeAuthModal = document.getElementById('closeAuthModal');
+      const tabLoginBtn = document.getElementById('tabLoginBtn');
+      const tabRegisterBtn = document.getElementById('tabRegisterBtn');
+      const loginForm = document.getElementById('loginForm');
+      const registerForm = document.getElementById('registerForm');
+
+      // Abrir modal desde los links del nav
+      window.openAuth = (type) => {
+        authModal.classList.add('active');
+        if (type === 'register') {
+          showRegister();
+        } else {
+          showLogin();
+        }
+      };
+
+      // Cerrar modal
+      closeAuthModal.addEventListener('click', () => authModal.classList.remove('active'));
+      authModal.addEventListener('click', (e) => {
+        if (e.target === authModal) authModal.classList.remove('active');
+      });
+
+      // Cambiar entre Login y Registro
+      function showLogin() {
+        tabLoginBtn.classList.add('active');
+        tabRegisterBtn.classList.remove('active');
+        loginForm.style.display = 'block';
+        registerForm.style.display = 'none';
+      }
+
+      function showRegister() {
+        tabRegisterBtn.classList.add('active');
+        tabLoginBtn.classList.remove('active');
+        registerForm.style.display = 'block';
+        loginForm.style.display = 'none';
+      }
+
+      tabLoginBtn.addEventListener('click', showLogin);
+      tabRegisterBtn.addEventListener('click', showRegister);
+    });
+  </script>
+</body>
+</html>
